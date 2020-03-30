@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/tcu-fighting-game/static/css/main.5f361e03.chunk.css",
+    "main.js": "/tcu-fighting-game/static/js/main.2aa4c262.chunk.js",
+    "main.js.map": "/tcu-fighting-game/static/js/main.2aa4c262.chunk.js.map",
+    "runtime-main.js": "/tcu-fighting-game/static/js/runtime-main.ec63c585.js",
+    "runtime-main.js.map": "/tcu-fighting-game/static/js/runtime-main.ec63c585.js.map",
+    "static/css/2.7a6efa76.chunk.css": "/tcu-fighting-game/static/css/2.7a6efa76.chunk.css",
+    "static/js/2.666d06a5.chunk.js": "/tcu-fighting-game/static/js/2.666d06a5.chunk.js",
+    "static/js/2.666d06a5.chunk.js.map": "/tcu-fighting-game/static/js/2.666d06a5.chunk.js.map",
+    "index.html": "/tcu-fighting-game/index.html",
+    "precache-manifest.7017f542c509140d17e31a6b01de9c6f.js": "/tcu-fighting-game/precache-manifest.7017f542c509140d17e31a6b01de9c6f.js",
+    "service-worker.js": "/tcu-fighting-game/service-worker.js",
+    "static/css/2.7a6efa76.chunk.css.map": "/tcu-fighting-game/static/css/2.7a6efa76.chunk.css.map",
+    "static/css/main.5f361e03.chunk.css.map": "/tcu-fighting-game/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.666d06a5.chunk.js.LICENSE.txt": "/tcu-fighting-game/static/js/2.666d06a5.chunk.js.LICENSE.txt",
+    "static/media/mdb.css": "/tcu-fighting-game/static/media/arrow_right.8ef6a08c.svg",
+    "static/media/all.min.css": "/tcu-fighting-game/static/media/fa-solid-900.ec763292.svg",
+    "static/media/raymondimage.png": "/tcu-fighting-game/static/media/raymondimage.bede1202.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ec63c585.js",
+    "static/css/2.7a6efa76.chunk.css",
+    "static/js/2.666d06a5.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.2aa4c262.chunk.js"
+  ]
+}
