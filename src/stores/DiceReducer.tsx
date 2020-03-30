@@ -47,9 +47,9 @@ export interface IReset {
 export const ActionCreators = {
     Roll: (playerName: Players) => (dispatch: any) => {
         const diceValues: IDiceProps[] = [];
-        diceValues.push({dieValue: randomInt(6), displayValue: 'D6', xPosition: randomInt(1200), yPosition: randomInt(1000)});
-        diceValues.push({dieValue: randomInt(6), displayValue: 'D6', xPosition: randomInt(1200), yPosition: randomInt(1000)});
-        diceValues.push({dieValue: randomInt(20), displayValue: 'D20', xPosition: randomInt(1200), yPosition: randomInt(1000)});
+        diceValues.push({dieValue: randomInt(6), displayValue: 'D6', xPosition: randomInt(800), yPosition: randomInt(600)});
+        diceValues.push({dieValue: randomInt(6), displayValue: 'D6', xPosition: randomInt(800), yPosition: randomInt(600)});
+        diceValues.push({dieValue: randomInt(20), displayValue: 'D20', xPosition: randomInt(800), yPosition: randomInt(600)});
         const payload = { player: playerName, dice: diceValues};
         dispatch ({
             type: ActionTypes.UPDATE_DICE,
