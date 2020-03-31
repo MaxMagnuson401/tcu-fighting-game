@@ -7,6 +7,7 @@ import { DiceGroup } from './DiceGroup';
 import styled from 'styled-components'
 import { Dice } from './Dice';
 import {COLORS_MAP} from '../Constants';
+import { IApplicationState } from '..';
 
 export interface IContainerProps {
     xPosition: number,
@@ -33,9 +34,9 @@ const StyledImage = styled.img`
 
 export const Home: React.FC = () => {
 
-    const players = useSelector((state: IDiceState) => state.players);
-    const activePlayer = useSelector((state: IDiceState) => state.activePlayer);
-    const hasWon = useSelector((state: IDiceState) => state.hasWon);
+    const players = useSelector((state: IApplicationState) => state.dice.players);
+    const activePlayer = useSelector((state: IApplicationState) => state.dice.activePlayer);
+    const hasWon = useSelector((state: IApplicationState) => state.dice.hasWon);
     const dispatch = useDispatch();
 
     return <>

@@ -1,4 +1,3 @@
-import React from 'react'
 import { IDiceProps } from '../components/Dice';
 import { Action } from 'redux';
 import { IPlayer, Players, PlayerControl } from './Models';
@@ -9,7 +8,7 @@ export interface IDiceState {
     players: IPlayer[];
 }
 
-export const defaultState = {
+export const defaultState: IDiceState = {
     activePlayer: Players.Raymond,
     hasWon: false,
     players: [
@@ -69,7 +68,7 @@ export const ActionCreators = {
         if (total === 12) {
             dispatch({type: ActionTypes.GAME_OVER});
         } else {
-            const nextActivePlayer = getState().players.find((p: IPlayer) => p.name !== playerName);
+            const nextActivePlayer = getState().dice.players.find((p: IPlayer) => p.name !== playerName);
             if (nextActivePlayer && nextActivePlayer.controller === PlayerControl.CPU) {
                 dispatch(ActionCreators.Roll(nextActivePlayer.name));
             }

@@ -19,4 +19,9 @@ export enum PlayerControl {
 export interface IDiceColorProps {
     backgroundColor: string;
     borderColor: string;
-} 
+}
+
+export interface IFighter {
+    name: Players;
+    isSelected: boolean;
+}
