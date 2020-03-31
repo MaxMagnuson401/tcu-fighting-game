@@ -57,6 +57,8 @@ export const Home: React.FC = () => {
                 <MDBCol size='2'>
                     <DiceGroup player={players[0]} 
                         Roll={() => dispatch(ActionCreators.Roll(players[0].name))}
+                        SetPlayerControl={(player, controller) => 
+                            dispatch(ActionCreators.SetPlayerControl(player, controller))}
                         activePlayer={activePlayer}
                         hasWon={hasWon}/>
                 </MDBCol>
@@ -66,6 +68,8 @@ export const Home: React.FC = () => {
                 <MDBCol size='2'>
                     <DiceGroup player={players[1]} 
                         Roll={() => dispatch(ActionCreators.Roll(players[1].name))}
+                        SetPlayerControl={(player, controller) => 
+                            dispatch(ActionCreators.SetPlayerControl(player, controller))}
                         activePlayer={activePlayer}
                         hasWon={hasWon}/>
                 </MDBCol>
