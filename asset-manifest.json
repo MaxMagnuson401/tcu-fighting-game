@@ -1,28 +1,28 @@
 {
   "files": {
     "main.css": "/tcu-fighting-game/static/css/main.5f361e03.chunk.css",
-    "main.js": "/tcu-fighting-game/static/js/main.c33169f1.chunk.js",
-    "main.js.map": "/tcu-fighting-game/static/js/main.c33169f1.chunk.js.map",
+    "main.js": "/tcu-fighting-game/static/js/main.611c6cec.chunk.js",
+    "main.js.map": "/tcu-fighting-game/static/js/main.611c6cec.chunk.js.map",
     "runtime-main.js": "/tcu-fighting-game/static/js/runtime-main.ec63c585.js",
     "runtime-main.js.map": "/tcu-fighting-game/static/js/runtime-main.ec63c585.js.map",
-    "static/css/2.7a6efa76.chunk.css": "/tcu-fighting-game/static/css/2.7a6efa76.chunk.css",
-    "static/js/2.666d06a5.chunk.js": "/tcu-fighting-game/static/js/2.666d06a5.chunk.js",
-    "static/js/2.666d06a5.chunk.js.map": "/tcu-fighting-game/static/js/2.666d06a5.chunk.js.map",
+    "static/css/2.e968eae0.chunk.css": "/tcu-fighting-game/static/css/2.e968eae0.chunk.css",
+    "static/js/2.8c66562f.chunk.js": "/tcu-fighting-game/static/js/2.8c66562f.chunk.js",
+    "static/js/2.8c66562f.chunk.js.map": "/tcu-fighting-game/static/js/2.8c66562f.chunk.js.map",
     "index.html": "/tcu-fighting-game/index.html",
-    "precache-manifest.825322f7f490dd3dc6b3914a094ccf5f.js": "/tcu-fighting-game/precache-manifest.825322f7f490dd3dc6b3914a094ccf5f.js",
+    "precache-manifest.a040f92f952ef245165a892f0b72ae32.js": "/tcu-fighting-game/precache-manifest.a040f92f952ef245165a892f0b72ae32.js",
     "service-worker.js": "/tcu-fighting-game/service-worker.js",
-    "static/css/2.7a6efa76.chunk.css.map": "/tcu-fighting-game/static/css/2.7a6efa76.chunk.css.map",
+    "static/css/2.e968eae0.chunk.css.map": "/tcu-fighting-game/static/css/2.e968eae0.chunk.css.map",
     "static/css/main.5f361e03.chunk.css.map": "/tcu-fighting-game/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.666d06a5.chunk.js.LICENSE.txt": "/tcu-fighting-game/static/js/2.666d06a5.chunk.js.LICENSE.txt",
+    "static/js/2.8c66562f.chunk.js.LICENSE.txt": "/tcu-fighting-game/static/js/2.8c66562f.chunk.js.LICENSE.txt",
     "static/media/mdb.css": "/tcu-fighting-game/static/media/arrow_right.8ef6a08c.svg",
     "static/media/all.min.css": "/tcu-fighting-game/static/media/fa-solid-900.ec763292.svg",
     "static/media/raymondimage.png": "/tcu-fighting-game/static/media/raymondimage.bede1202.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ec63c585.js",
-    "static/css/2.7a6efa76.chunk.css",
-    "static/js/2.666d06a5.chunk.js",
+    "static/css/2.e968eae0.chunk.css",
+    "static/js/2.8c66562f.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.c33169f1.chunk.js"
+    "static/js/main.611c6cec.chunk.js"
   ]
 }
