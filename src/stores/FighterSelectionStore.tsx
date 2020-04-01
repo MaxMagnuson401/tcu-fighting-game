@@ -1,14 +1,14 @@
-import { IFighter, Players } from "./Models";
+import { IFighterSelection, Fighters } from "./Models";
 import { Action } from "redux";
 
 export interface IFighterSelectionState {
-    fighters: IFighter[];
+    fighters: IFighterSelection[];
 }
 
 export const defaultFighterState: IFighterSelectionState = {
     fighters: [
-        {name: Players.Raymond, isSelected: false},
-        {name: Players.Robert, isSelected: false},
+        {name: Fighters.Raymond},
+        {name: Fighters.Robert},
     ],
 }
 
@@ -18,7 +18,7 @@ export enum ActionTypes {
 
 export interface ISelectFighter extends Action {
     type: ActionTypes.SELECT_FIGHTER,
-    payload: Players,
+    payload: Fighters,
 }
 
 type acceptedActions = ISelectFighter;
@@ -31,7 +31,7 @@ export const FighterSelectionReducer =
         switch(action.type) {
             case ActionTypes.SELECT_FIGHTER:
                 return {...state,
-                    fighters: [...state.fighters.map((f: IFighter) =>
+                    fighters: [...state.fighters.map((f: IFighterSelection) =>
                         f.name === action.payload ?
                             {...f, isSelected: true} :
                             {...f}

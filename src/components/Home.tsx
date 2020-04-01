@@ -34,13 +34,13 @@ const StyledImage = styled.img`
 
 export const Home: React.FC = () => {
 
-    const players = useSelector((state: IApplicationState) => state.dice.players);
+    const fighters = useSelector((state: IApplicationState) => state.dice.fighters);
     const activePlayer = useSelector((state: IApplicationState) => state.dice.activePlayer);
     const hasWon = useSelector((state: IApplicationState) => state.dice.hasWon);
     const dispatch = useDispatch();
 
     return <>
-        {players.map((p) => p.dice.map((d) =>
+        {fighters.map((p) => p.dice.map((d) =>
             {
             const colors = COLORS_MAP[p.name];
             return <RandomDieContainer xPosition={d.xPosition} 
@@ -56,8 +56,8 @@ export const Home: React.FC = () => {
         <MDBContainer>
             <MDBRow>
                 <MDBCol size='2'>
-                    <DiceGroup player={players[0]} 
-                        Roll={() => dispatch(ActionCreators.Roll(players[0].name))}
+                    <DiceGroup player={fighters[0]} 
+                        Roll={() => dispatch(ActionCreators.Roll(fighters[0].name))}
                         SetPlayerControl={(player, controller) => 
                             dispatch(ActionCreators.SetPlayerControl(player, controller))}
                         activePlayer={activePlayer}
@@ -67,8 +67,8 @@ export const Home: React.FC = () => {
                     <StyledImage src={raymondimage} width={750} />
                 </MDBCol>
                 <MDBCol size='2'>
-                    <DiceGroup player={players[1]} 
-                        Roll={() => dispatch(ActionCreators.Roll(players[1].name))}
+                    <DiceGroup player={fighters[1]} 
+                        Roll={() => dispatch(ActionCreators.Roll(fighters[1].name))}
                         SetPlayerControl={(player, controller) => 
                             dispatch(ActionCreators.SetPlayerControl(player, controller))}
                         activePlayer={activePlayer}

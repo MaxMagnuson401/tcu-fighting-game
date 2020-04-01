@@ -1,6 +1,6 @@
-import { Players } from '../stores/Models'
+import { Fighters } from '../stores/Models'
 
 export const fighterImages = {
-    [Players.Raymond]: require('./raymond.png'),
-    [Players.Robert]: require('./robert.png'),
+    [Fighters.Raymond]: require('./raymond.png'),
+    [Fighters.Robert]: require('./robert.png'),
 }

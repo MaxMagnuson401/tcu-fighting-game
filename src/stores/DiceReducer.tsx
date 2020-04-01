@@ -1,23 +1,23 @@
 import { IDiceProps } from '../components/Dice';
 import { Action } from 'redux';
-import { IPlayer, Players, PlayerControl } from './Models';
+import { IFighter, Fighters, PlayerControl } from './Models';
 
 export interface IDiceState {
-    activePlayer: Players;
+    activePlayer: Fighters;
     hasWon: boolean;
-    players: IPlayer[];
+    fighters: IFighter[];
 }
 
 export const defaultState: IDiceState = {
-    activePlayer: Players.Raymond,
+    activePlayer: Fighters.Raymond,
     hasWon: false,
-    players: [
+    fighters: [
         {
-            name: Players.Robert,
+            name: Fighters.Robert,
             controller: PlayerControl.Player,
             dice: [],
         }, {
-            name: Players.Raymond,
+            name: Fighters.Raymond,
             controller: PlayerControl.Player,
             dice: [],
         }
@@ -34,7 +34,7 @@ export enum ActionTypes {
 
 export interface IUpdateDice extends Action {
     type: ActionTypes.UPDATE_DICE,
-    payload: {dice: IDiceProps[], player: Players};
+    payload: {dice: IDiceProps[], player: Fighters};
 }
 export interface IChangeActivePlayer {
     type: ActionTypes.CHANGE_ACTIVE_PLAYER,
@@ -47,11 +47,11 @@ export interface IReset {
 }
 export interface ISetPlayerControl {
     type: ActionTypes.SET_PLAYER_CONTROL;
-    payload: { player: Players, controller: PlayerControl};
+    payload: { player: Fighters, controller: PlayerControl};
 }
 
 export const ActionCreators = {
-    Roll: (playerName: Players) => (dispatch: any, getState: any) => {
+    Roll: (playerName: Fighters) => (dispatch: any, getState: any) => {
         const diceValues: IDiceProps[] = [];
         diceValues.push({dieValue: randomInt(6), displayValue: 'D6', xPosition: randomInt(800), yPosition: randomInt(600)});
         diceValues.push({dieValue: randomInt(6), displayValue: 'D6', xPosition: randomInt(800), yPosition: randomInt(600)});
@@ -68,7 +68,7 @@ export const ActionCreators = {
         if (total === 12) {
             dispatch({type: ActionTypes.GAME_OVER});
         } else {
-            const nextActivePlayer = getState().dice.players.find((p: IPlayer) => p.name !== playerName);
+            const nextActivePlayer = getState().dice.fighters.find((p: IFighter) => p.name !== playerName);
             if (nextActivePlayer && nextActivePlayer.controller === PlayerControl.CPU) {
                 dispatch(ActionCreators.Roll(nextActivePlayer.name));
             }
@@ -80,7 +80,7 @@ export const ActionCreators = {
     Reset: () => (dispatch: any) => {
         dispatch({type: ActionTypes.RESET});
     },
-    SetPlayerControl: (player: Players, controller: PlayerControl) => (dispatch: any) => {
+    SetPlayerControl: (player: Fighters, controller: PlayerControl) => (dispatch: any) => {
         dispatch({
             type: ActionTypes.SET_PLAYER_CONTROL,
             payload: {player, controller},
@@ -106,7 +106,7 @@ export const diceReducer = function (state: IDiceState = defaultState, action: a
         case ActionTypes.UPDATE_DICE:
             return {
                 ...state,
-                players: [...state.players.map((p) => 
+                fighters: [...state.fighters.map((p) => 
                     p.name === action.payload.player ?
                     {...p, dice: action.payload.dice} :
                     {...p}
@@ -115,9 +115,9 @@ export const diceReducer = function (state: IDiceState = defaultState, action: a
         case ActionTypes.CHANGE_ACTIVE_PLAYER:
             return {
                 ...state,
-                activePlayer: state.activePlayer === Players.Raymond ?
-                    Players.Robert :
-                    Players.Raymond
+                activePlayer: state.activePlayer === Fighters.Raymond ?
+                    Fighters.Robert :
+                    Fighters.Raymond
             }
         case ActionTypes.GAME_OVER:
             return {
@@ -131,7 +131,7 @@ export const diceReducer = function (state: IDiceState = defaultState, action: a
         case ActionTypes.SET_PLAYER_CONTROL:
             return {
                 ...state, 
-                players: state.players.map((p) => {
+                fighters: state.fighters.map((p) => {
                     return p.name === action.payload.player ?
                         {...p, controller: action.payload.controller} :
                         {...p}

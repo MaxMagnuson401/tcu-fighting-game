@@ -1,12 +1,12 @@
 import { IDiceProps } from "../components/Dice";
 
-export interface IPlayer {
-    name: Players;
+export interface IFighter {
+    name: Fighters;
     controller: PlayerControl;
     dice: IDiceProps[];
 }
 
-export enum Players {
+export enum Fighters {
     Raymond = 'Raymond',
     Robert = 'Robert',
 }
@@ -21,7 +21,12 @@ export interface IDiceColorProps {
     borderColor: string;
 }
 
-export interface IFighter {
-    name: Players;
-    isSelected: boolean;
+export interface IFighterSelection {
+    name: Fighters;
+    chosenBy?: PlayerNumber;
+}
+
+export enum PlayerNumber {
+    PlayerOne = 'PlayerOne',
+    PlayerTwo = 'PlayerTwo',
 }

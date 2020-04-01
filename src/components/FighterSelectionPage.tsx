@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Players } from '../stores/Models';
+import { Fighters } from '../stores/Models';
 import { fighterImages } from '../assets/assets';
 import { FighterPortrait } from './FighterPortrait';
 
@@ -15,8 +15,8 @@ export const FighterSelectionPage: React.FC = () => {
 
     return <>
         <FighterContainer>
-            <FighterPortrait imageSource={fighterImages[Players.Raymond]} />
-            <FighterPortrait imageSource={fighterImages[Players.Robert]} />
+            <FighterPortrait imageSource={fighterImages[Fighters.Raymond]} />
+            <FighterPortrait imageSource={fighterImages[Fighters.Robert]} />
         </FighterContainer>
     </>;
 }

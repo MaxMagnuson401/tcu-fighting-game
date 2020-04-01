@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPlayer, Players, PlayerControl } from '../stores/Models';
+import { IFighter, Fighters, PlayerControl } from '../stores/Models';
 import { MDBBtn, MDBFormInline, MDBInput } from 'mdbreact';
 import styled from 'styled-components';
 import { COLORS_MAP } from '../Constants';
@@ -18,11 +18,11 @@ const PlayerContainer = styled.div`
 `
 
 export interface IDiceGroupProps {
-    player: IPlayer;
-    activePlayer: Players;
+    player: IFighter;
+    activePlayer: Fighters;
     hasWon: boolean;
     Roll: () => void;
-    SetPlayerControl: (player: Players, controller: PlayerControl) => void;
+    SetPlayerControl: (player: Fighters, controller: PlayerControl) => void;
 }
 
 export class DiceGroup extends React.Component<IDiceGroupProps> {
