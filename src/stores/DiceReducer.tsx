@@ -1,6 +1,6 @@
 import { IDiceProps } from '../components/Dice';
 import { Action } from 'redux';
-import { IFighter, Fighters, PlayerControl } from './Models';
+import { IFighter, Fighters, PlayerControl, PlayerNumber } from './Models';
 
 export interface IDiceState {
     activePlayer: Fighters;
@@ -15,10 +15,12 @@ export const defaultState: IDiceState = {
         {
             name: Fighters.Robert,
             controller: PlayerControl.Player,
+            playerNumber: PlayerNumber.PlayerOne,
             dice: [],
         }, {
             name: Fighters.Raymond,
             controller: PlayerControl.Player,
+            playerNumber: PlayerNumber.PlayerTwo,
             dice: [],
         }
     ]

@@ -3,12 +3,19 @@ import { IDiceProps } from "../components/Dice";
 export interface IFighter {
     name: Fighters;
     controller: PlayerControl;
+    playerNumber: PlayerNumber;
     dice: IDiceProps[];
 }
 
 export enum Fighters {
     Raymond = 'Raymond',
     Robert = 'Robert',
+    Debra = 'Debra',
+    Lenny = 'Lenny',
+    Kaiba = 'Kaiba',
+    Yugi = 'Yugi',
+    Teferi = 'Teferi',
+    Booze = 'Booze',
 }
 
 export enum PlayerControl {

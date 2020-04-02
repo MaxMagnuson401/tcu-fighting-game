@@ -9,7 +9,7 @@ import { ActionCreators } from '../stores/FighterSelectionStore';
 
 const FighterContainer = styled.div`
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto auto;
     background-color: #696969;
     padding: 2px;
 `;
@@ -21,12 +21,9 @@ export const FighterSelectionPage: React.FC = () => {
 
     return <>
         <FighterContainer>
-            <FighterPortrait imageSource={fighterImages[Fighters.Raymond]} 
-                SelectFighter={() => dispatch(ActionCreators.SelectFighter(Fighters.Raymond, PlayerNumber.PlayerOne))} 
-                isSelected={fighters.find((f) => f.name === Fighters.Raymond)?.chosenBy === PlayerNumber.PlayerOne}/>
-            <FighterPortrait imageSource={fighterImages[Fighters.Robert]} 
-                SelectFighter={() => dispatch(ActionCreators.SelectFighter(Fighters.Robert, PlayerNumber.PlayerOne))} 
-                isSelected={fighters.find((f) => f.name === Fighters.Robert)?.chosenBy === PlayerNumber.PlayerOne}/>
+            {fighters.map((f) => <FighterPortrait imageSource={fighterImages[f.name]} 
+                SelectFighter={() => dispatch(ActionCreators.SelectFighter(f.name, PlayerNumber.PlayerOne))} 
+                isSelected={f.chosenBy !== undefined}/>)}
         </FighterContainer>
     </>;
 }

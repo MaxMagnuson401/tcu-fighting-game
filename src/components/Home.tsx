@@ -42,7 +42,7 @@ export const Home: React.FC = () => {
     return <>
         {fighters.map((p) => p.dice.map((d) =>
             {
-            const colors = COLORS_MAP[p.name];
+            const colors = COLORS_MAP[p.playerNumber];
             return <RandomDieContainer xPosition={d.xPosition} 
                 yPosition={d.yPosition}
                 {...colors}>

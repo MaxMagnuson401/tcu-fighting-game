@@ -1,5 +1,5 @@
 import React from 'react';
-import { IFighter, Fighters, PlayerControl } from '../stores/Models';
+import { IFighter, Fighters, PlayerControl, PlayerNumber } from '../stores/Models';
 import { MDBBtn, MDBFormInline, MDBInput } from 'mdbreact';
 import styled from 'styled-components';
 import { COLORS_MAP } from '../Constants';
@@ -30,7 +30,7 @@ export class DiceGroup extends React.Component<IDiceGroupProps> {
     public render() {
         const { activePlayer, player, SetPlayerControl } = this.props;
         const isActive = activePlayer === player.name;
-        const colors = COLORS_MAP[player.name];
+        const colors = COLORS_MAP[player.playerNumber];
         return <>
             <PlayerContainer {...colors}>
                 <h3>{player.name}</h3>

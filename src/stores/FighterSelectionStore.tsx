@@ -9,6 +9,12 @@ export const defaultFighterState: IFighterSelectionState = {
     fighters: [
         {name: Fighters.Raymond},
         {name: Fighters.Robert},
+        {name: Fighters.Yugi},
+        {name: Fighters.Teferi},
+        {name: Fighters.Lenny},
+        {name: Fighters.Kaiba},
+        {name: Fighters.Debra},
+        {name: Fighters.Booze},
     ],
 }
 
@@ -43,7 +49,7 @@ export const FighterSelectionReducer =
                     fighters: [...state.fighters.map((f: IFighterSelection) =>
                         f.name === action.payload.fighter ?
                             {...f, chosenBy: f.chosenBy ? undefined: action.payload.playerNumber} :
-                            {...f}
+                            {...f, chosenBy: f.chosenBy === action.payload.playerNumber ? undefined : f.chosenBy}
                     )],
                 }
             default:
