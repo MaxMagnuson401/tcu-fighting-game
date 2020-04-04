@@ -2,7 +2,7 @@ import React from 'react';
 import raymondimage from '../assets/raymondimage.png';
 import { MDBCol, MDBRow, MDBContainer, MDBBtn } from 'mdbreact';
 import { useSelector, useDispatch } from 'react-redux';
-import { IDiceState, ActionCreators } from '../stores/DiceReducer';
+import { ActionCreators } from '../stores/DiceReducer';
 import { DiceGroup } from './DiceGroup';
 import styled from 'styled-components'
 import { Dice } from './Dice';

@@ -6,6 +6,8 @@ import { FighterPortrait } from './FighterPortrait';
 import { useDispatch, useSelector } from 'react-redux';
 import { IApplicationState } from '..';
 import { ActionCreators } from '../stores/FighterSelectionStore';
+import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
+import { FighterSidePanel } from './FighterSidePanel';
 
 const FighterContainer = styled.div`
     display: grid;
@@ -17,13 +19,35 @@ const FighterContainer = styled.div`
 export const FighterSelectionPage: React.FC = () => {
 
     const fighters = useSelector((state: IApplicationState) => state.fighter.fighters);
+    const activePlayer = useSelector((state: IApplicationState) => state.fighter.activePlayer);
     const dispatch = useDispatch();
 
+    const firstFighter = fighters.find((f) => f.chosenBy === PlayerNumber.PlayerOne);
+    const secondFighter = fighters.find((f) => f.chosenBy === PlayerNumber.PlayerTwo);
+
     return <>
-        <FighterContainer>
-            {fighters.map((f) => <FighterPortrait imageSource={fighterImages[f.name]} 
-                SelectFighter={() => dispatch(ActionCreators.SelectFighter(f.name, PlayerNumber.PlayerOne))} 
-                isSelected={f.chosenBy !== undefined}/>)}
-        </FighterContainer>
+        <MDBContainer>
+            <MDBRow>
+                <MDBCol size='3'>
+                    <FighterSidePanel 
+                        fighterName={firstFighter ? firstFighter.name : undefined} 
+                        LockIn={() => dispatch(ActionCreators.ChangeActivePlayer(PlayerNumber.PlayerTwo))}
+                        isLockedIn={activePlayer === PlayerNumber.PlayerTwo} />
+                </MDBCol>
+                <MDBCol size='6'>
+                    <FighterContainer>
+                        {fighters.map((f) => <FighterPortrait imageSource={fighterImages[f.name]} 
+                            SelectFighter={() => dispatch(ActionCreators.SelectFighter(f.name, activePlayer))} 
+                            chosenBy={f.chosenBy}/>)}
+                    </FighterContainer>
+                </MDBCol>
+                <MDBCol size='3'>
+                    <FighterSidePanel 
+                        fighterName={secondFighter ? secondFighter.name : undefined}
+                        LockIn={() => undefined}
+                        isLockedIn={activePlayer === PlayerNumber.PlayerOne} />
+                </MDBCol>
+            </MDBRow>
+        </MDBContainer>
     </>;
 }
