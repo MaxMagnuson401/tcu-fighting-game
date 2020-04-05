@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7cbe881aca134a55eafc71befc7e259d",
+    "revision": "69503a7caeda93d50fd9576b569bcb44",
     "url": "/tcu-fighting-game/index.html"
   },
   {
-    "revision": "4387eafc7dc1b7b4200d",
+    "revision": "fb1c3eab8c82f5f94d6c",
     "url": "/tcu-fighting-game/static/css/2.546bb576.chunk.css"
   },
   {
-    "revision": "2cd0d254ab49f0ac6f7b",
+    "revision": "e913907b840471f22edf",
     "url": "/tcu-fighting-game/static/css/main.5f361e03.chunk.css"
   },
   {
-    "revision": "4387eafc7dc1b7b4200d",
-    "url": "/tcu-fighting-game/static/js/2.7844a320.chunk.js"
+    "revision": "fb1c3eab8c82f5f94d6c",
+    "url": "/tcu-fighting-game/static/js/2.718b8818.chunk.js"
   },
   {
     "revision": "d2966845b94a3318bf32eecc7af8015d",
-    "url": "/tcu-fighting-game/static/js/2.7844a320.chunk.js.LICENSE.txt"
+    "url": "/tcu-fighting-game/static/js/2.718b8818.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2cd0d254ab49f0ac6f7b",
-    "url": "/tcu-fighting-game/static/js/main.0afac798.chunk.js"
+    "revision": "e913907b840471f22edf",
+    "url": "/tcu-fighting-game/static/js/main.622501ab.chunk.js"
   },
   {
     "revision": "8fedf608b57c897f1b16",
