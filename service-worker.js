@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/tcu-fighting-game/precache-manifest.a040f92f952ef245165a892f0b72ae32.js"
+  "/tcu-fighting-game/precache-manifest.91f194c75b26434c736d0674f8bb1deb.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9c956d14fbefe720e508a0fa154ac188",
+    "revision": "7cbe881aca134a55eafc71befc7e259d",
     "url": "/tcu-fighting-game/index.html"
   },
   {
-    "revision": "7b1800aa037a9a930aaf",
-    "url": "/tcu-fighting-game/static/css/2.e968eae0.chunk.css"
+    "revision": "4387eafc7dc1b7b4200d",
+    "url": "/tcu-fighting-game/static/css/2.546bb576.chunk.css"
   },
   {
-    "revision": "dd646ccffed9b093b6a7",
+    "revision": "2cd0d254ab49f0ac6f7b",
     "url": "/tcu-fighting-game/static/css/main.5f361e03.chunk.css"
   },
   {
-    "revision": "7b1800aa037a9a930aaf",
-    "url": "/tcu-fighting-game/static/js/2.8c66562f.chunk.js"
+    "revision": "4387eafc7dc1b7b4200d",
+    "url": "/tcu-fighting-game/static/js/2.7844a320.chunk.js"
   },
   {
     "revision": "d2966845b94a3318bf32eecc7af8015d",
-    "url": "/tcu-fighting-game/static/js/2.8c66562f.chunk.js.LICENSE.txt"
+    "url": "/tcu-fighting-game/static/js/2.7844a320.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "dd646ccffed9b093b6a7",
-    "url": "/tcu-fighting-game/static/js/main.611c6cec.chunk.js"
+    "revision": "2cd0d254ab49f0ac6f7b",
+    "url": "/tcu-fighting-game/static/js/main.0afac798.chunk.js"
   },
   {
     "revision": "8fedf608b57c897f1b16",
@@ -34,6 +34,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8ef6a08cdc1154920165680a4edde771",
     "url": "/tcu-fighting-game/static/media/arrow_right.8ef6a08c.svg"
+  },
+  {
+    "revision": "8e7c7533d39e3e4cb4dd8c2c5224f296",
+    "url": "/tcu-fighting-game/static/media/booze.8e7c7533.png"
+  },
+  {
+    "revision": "aa7636f3d8cea5fd2a322575eceebbe2",
+    "url": "/tcu-fighting-game/static/media/debra.aa7636f3.jpg"
   },
   {
     "revision": "0cb5a5c0d251c109458c85c6afeffbaa",
@@ -96,7 +104,31 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tcu-fighting-game/static/media/fa-solid-900.ec763292.svg"
   },
   {
+    "revision": "645984df4c6c5ebec725419cf0dc075e",
+    "url": "/tcu-fighting-game/static/media/lenny.645984df.png"
+  },
+  {
+    "revision": "dbafa5fa7ec073001f24e7b68f2d9a6a",
+    "url": "/tcu-fighting-game/static/media/raymond.dbafa5fa.png"
+  },
+  {
     "revision": "bede120298275f94f36535219c613fa3",
     "url": "/tcu-fighting-game/static/media/raymondimage.bede1202.png"
+  },
+  {
+    "revision": "2e636add3b402a06d5607af5c190fc10",
+    "url": "/tcu-fighting-game/static/media/robert.2e636add.png"
+  },
+  {
+    "revision": "58a950ea01cc54a9b5a4a2f064767f7e",
+    "url": "/tcu-fighting-game/static/media/setokaiba.58a950ea.jpg"
+  },
+  {
+    "revision": "3c44027f59845d588ac0193c3bab8035",
+    "url": "/tcu-fighting-game/static/media/teferi.3c44027f.png"
+  },
+  {
+    "revision": "179f040a213d44596020e03bfb5aa7fd",
+    "url": "/tcu-fighting-game/static/media/yamiyugi.179f040a.jpg"
   }
 ]);
