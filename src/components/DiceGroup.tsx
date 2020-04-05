@@ -1,8 +1,9 @@
 import React from 'react';
-import { IFighter, Fighters, PlayerControl, PlayerNumber } from '../stores/Models';
+import { IFighter, Fighters, PlayerControl } from '../stores/Models';
 import { MDBBtn, MDBFormInline, MDBInput } from 'mdbreact';
 import styled from 'styled-components';
 import { COLORS_MAP } from '../Constants';
+import { fighterImages } from '../assets/assets';
 
 interface IContainerProps {
     borderColor: string;
@@ -16,6 +17,13 @@ const PlayerContainer = styled.div`
     border-color: ${(props: IContainerProps) => props.borderColor};
     background-color: ${(props: IContainerProps) => props.backgroundColor}
 `
+
+const Portrait = styled.img`
+    border-style: solid;
+    border-color: black;
+    width: 75px;
+    height: 75px;
+`;
 
 export interface IDiceGroupProps {
     player: IFighter;
@@ -34,6 +42,7 @@ export class DiceGroup extends React.Component<IDiceGroupProps> {
         return <>
             <PlayerContainer {...colors}>
                 <h3>{player.name}</h3>
+                <Portrait src={fighterImages[player.name]} />
                 {this.buttonColoring(isActive, this.props)}
                 <MDBFormInline>
                     <MDBInput

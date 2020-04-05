@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Fighters, PlayerNumber } from '../stores/Models';
+import { Page, PlayerNumber } from '../stores/Models';
 import { fighterImages } from '../assets/assets';
 import { FighterPortrait } from './FighterPortrait';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,7 +18,7 @@ const FighterContainer = styled.div`
 
 export const FighterSelectionPage: React.FC = () => {
 
-    const fighters = useSelector((state: IApplicationState) => state.fighter.fighters);
+    const fighters = useSelector((state: IApplicationState) => state.fighter.fighterSelections);
     const activePlayer = useSelector((state: IApplicationState) => state.fighter.activePlayer);
     const dispatch = useDispatch();
 
@@ -44,8 +44,8 @@ export const FighterSelectionPage: React.FC = () => {
                 <MDBCol size='3'>
                     <FighterSidePanel 
                         fighterName={secondFighter ? secondFighter.name : undefined}
-                        LockIn={() => undefined}
-                        isLockedIn={activePlayer === PlayerNumber.PlayerOne} />
+                        LockIn={() => dispatch(ActionCreators.ChangeScreens(Page.BattleScreen))}
+                        isLockedIn={activePlayer === PlayerNumber.PlayerOne || !secondFighter} />
                 </MDBCol>
             </MDBRow>
         </MDBContainer>

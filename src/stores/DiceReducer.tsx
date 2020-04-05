@@ -1,6 +1,6 @@
 import { IDiceProps } from '../components/Dice';
 import { Action } from 'redux';
-import { IFighter, Fighters, PlayerControl, PlayerNumber } from './Models';
+import { IFighter, Fighters, PlayerControl, PlayerNumber, IFighterSelection } from './Models';
 
 export interface IDiceState {
     activePlayer: Fighters;
@@ -32,6 +32,7 @@ export enum ActionTypes {
     GAME_OVER = 'GAME_OVER',
     RESET = 'RESET',
     SET_PLAYER_CONTROL = 'SET_PLAYER_CONTROL',
+    LOAD_SELECTION_DATA = 'LOAD_SELECTION_DATA',
 }
 
 export interface IUpdateDice extends Action {
@@ -50,6 +51,10 @@ export interface IReset {
 export interface ISetPlayerControl {
     type: ActionTypes.SET_PLAYER_CONTROL;
     payload: { player: Fighters, controller: PlayerControl};
+}
+export interface ILoadSelectionData {
+    type: ActionTypes.LOAD_SELECTION_DATA;
+    payload: IFighterSelection[];
 }
 
 export const ActionCreators = {
@@ -94,13 +99,14 @@ export function randomInt(maxValue: number) {
     return Math.floor(Math.random() * maxValue) + 1;
 }
 
-export type acceptedActions = IUpdateDice | 
+export type BattleScreenActions = IUpdateDice | 
     IChangeActivePlayer | 
     IGameOver | 
     IReset| 
-    ISetPlayerControl;
+    ISetPlayerControl |
+    ILoadSelectionData;
 
-export const diceReducer = function (state: IDiceState = defaultState, action: acceptedActions) {
+export const diceReducer = function (state: IDiceState = defaultState, action: BattleScreenActions) {
     if (typeof state === 'undefined') {
         return defaultState;
     }
@@ -115,11 +121,13 @@ export const diceReducer = function (state: IDiceState = defaultState, action: a
                 )],
             }
         case ActionTypes.CHANGE_ACTIVE_PLAYER:
+            const playerOne = state.fighters[0].name;
+            const playerTwo = state.fighters[1].name;
             return {
                 ...state,
-                activePlayer: state.activePlayer === Fighters.Raymond ?
-                    Fighters.Robert :
-                    Fighters.Raymond
+                activePlayer: state.activePlayer === playerOne ?
+                    playerTwo :
+                    playerOne
             }
         case ActionTypes.GAME_OVER:
             return {
@@ -139,7 +147,21 @@ export const diceReducer = function (state: IDiceState = defaultState, action: a
                         {...p}
                 })
             }
+        case ActionTypes.LOAD_SELECTION_DATA:
+            const newFighters: IFighter[] = state.fighters.map((f) => {
+                const fighterData = action.payload.find((p) => p.chosenBy === f.playerNumber);
+                 return fighterData ? 
+                    {...f, name: fighterData.name} :
+                    {...f}
+            });
+            const activePlayer = action.payload.find((f) => f.chosenBy === PlayerNumber.PlayerOne);
+
+            return {...state,
+                fighters: [...newFighters],
+                activePlayer: activePlayer ? activePlayer.name : state.activePlayer,
+            }
+            
         default:
-            return state;
+            return {...state};
     }
 }

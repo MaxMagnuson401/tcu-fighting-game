@@ -5,15 +5,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { defaultState, diceReducer, IDiceState } from './stores/DiceReducer';
 import { defaultFighterState, FighterSelectionReducer, IFighterSelectionState } from './stores/FighterSelectionStore';
+import reducer from './stores/Index';
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-
-const combinedReducers = combineReducers({
-  dice: diceReducer, 
-  fighter: FighterSelectionReducer
-});
 
 export interface IApplicationState {
   dice: IDiceState,
@@ -25,7 +21,7 @@ const combinedDefaultState: IApplicationState = {
   fighter: defaultFighterState,
 }
 
-const store = createStore(combinedReducers, 
+const store = createStore(reducer, 
   combinedDefaultState, 
   composeWithDevTools(applyMiddleware(thunk)));
 

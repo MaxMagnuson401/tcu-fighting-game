@@ -38,3 +38,8 @@ export enum PlayerNumber {
     PlayerOne = 'PlayerOne',
     PlayerTwo = 'PlayerTwo',
 }
+
+export enum Page {
+    CharacterSelection = 'Character Seletion',
+    BattleScreen = 'Battle Screen',
+}

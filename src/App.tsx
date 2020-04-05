@@ -4,13 +4,12 @@ import 'mdbreact/dist/css/mdb.css';
 import React from 'react';
 import './App.css';
 import { Home } from './components/Home';
-import { FighterSelectionPage } from './components/FighterSelectionPage';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <FighterSelectionPage />
+        <Home />
       </header>
     </div>
   );
